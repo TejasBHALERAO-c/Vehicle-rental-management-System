@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideHub - Your Journey Starts Here</title>
+    <link rel="stylesheet" href="css/ridehub.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.454.0/lucide.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navigation">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">RideHub</a>
+            
+            <div class="nav-menu-desktop">
+                <a href="/" class="nav-link">Home</a>
+                <a href="#vehicles" class="nav-link">Browse</a>
+                <a href="bookings.html" class="nav-link">My Bookings</a>
+            </div>
+            
+            <div class="nav-actions-desktop">
+                <a href="wishlist.html" class="nav-icon-btn" title="Wishlist">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </a>
+                <div id="authButtons">
+                    <a href="login.html" class="btn btn-ghost">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+                <div id="userMenu" style="display: none;">
+                    <button class="btn btn-outline" id="logoutBtn">
+                        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                        Logout
+                    </button>
+                </div>
+            </div>
+            
+            <button class="nav-mobile-toggle" id="mobileMenuToggle">
+                <svg class="icon menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg class="icon close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="nav-mobile-menu" id="mobileMenu">
+            <a href="/" class="nav-link-mobile">Home</a>
+            <a href="#vehicles" class="nav-link-mobile">Browse</a>
+            <a href="bookings.html" class="nav-link-mobile">My Bookings</a>
+            <a href="wishlist.html" class="nav-link-mobile">Wishlist</a>
+            <div id="authButtonsMobile">
+                <a href="login.html" class="btn btn-ghost btn-full">Login</a>
+                <a href="register.html" class="btn btn-primary btn-full">Sign Up</a>
+            </div>
+            <div id="userMenuMobile" style="display: none;">
+                <button class="btn btn-outline btn-full" id="logoutBtnMobile">
+                    <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content slide-up">
+                    <h1 class="hero-title">Your Journey Starts Here</h1>
+                    <p class="hero-subtitle">Browse premium vehicles, compare prices, and book the perfect ride for your next adventure.</p>
+                    
+                    <div class="hero-search">
+                        <div class="search-grid">
+                            <div class="search-field">
+                                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <input type="text" id="pickupLocation" placeholder="Pickup location" class="search-input">
+                            </div>
+                            <div class="search-field">
+                                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <input type="date" id="pickupDate" class="search-input">
+                            </div>
+                            <div class="search-field">
+                                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <input type="date" id="returnDate" class="search-input">
+                            </div>
+                        </div>
+                        <button class="btn btn-accent btn-full" id="searchVehiclesBtn">Search Vehicles</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vehicle Grid Section -->
+        <section id="vehicles" class="vehicles-section">
+            <div class="container">
+                <h2 class="section-title">Our Fleet</h2>
+                <p class="section-subtitle">Choose from our diverse range of vehicles</p>
+                
+                <div class="tabs">
+                    <div class="tabs-list">
+                        <button class="tabs-trigger active" data-tab="bikes">Bikes</button>
+                        <button class="tabs-trigger" data-tab="scooters">Scooters</button>
+                        <button class="tabs-trigger" data-tab="cars">Cars</button>
+                        <button class="tabs-trigger" data-tab="premium">Premium</button>
+                    </div>
+                    
+                    <div class="tabs-content active" data-content="bikes" id="bikesContent">
+                        <div class="vehicles-grid" id="bikesGrid"></div>
+                    </div>
+                    <div class="tabs-content" data-content="scooters" id="scootersContent">
+                        <div class="vehicles-grid" id="scootersGrid"></div>
+                    </div>
+                    <div class="tabs-content" data-content="cars" id="carsContent">
+                        <div class="vehicles-grid" id="carsGrid"></div>
+                    </div>
+                    <div class="tabs-content" data-content="premium" id="premiumContent">
+                        <div class="vehicles-grid" id="premiumGrid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title text-center">Why Choose RideHub?</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card fade-in">
+                        <svg class="feature-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <h3 class="feature-title">Quick Booking</h3>
+                        <p class="feature-description">Book a vehicle in seconds with our streamlined booking process</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <svg class="feature-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <h3 class="feature-title">Safe & Secure</h3>
+                        <p class="feature-description">All vehicles are insured and regularly maintained for your safety</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <svg class="feature-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <h3 class="feature-title">Multiple Locations</h3>
+                        <p class="feature-description">Pick up and drop off at convenient locations across the city</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <svg class="feature-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                        <h3 class="feature-title">24/7 Support</h3>
+                        <p class="feature-description">Our support team is always ready to assist you</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">RideHub</h3>
+                    <p class="footer-text">Making vehicle rental simple, accessible, and affordable for everyone.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#vehicles">Browse</a></li>
+                        <li><a href="bookings.html">My Bookings</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 RideHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/ridehub.js"></script>
+</body>
+</html>
+

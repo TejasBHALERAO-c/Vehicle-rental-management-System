@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - Vehicle Rental</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="main-page">
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">VehiRent</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Browse Vehicles</a></li>
+                <li><a href="wishlist.html" class="nav-link">Wishlist</a></li>
+                <li><a href="bookings.html" class="nav-link active">My Bookings</a></li>
+                <li id="adminLink" style="display:none;"><a href="admin.html" class="nav-link">Admin</a></li>
+                <li><a href="#" id="logoutBtn" class="nav-link logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="bookings-section">
+        <h1>My Bookings</h1>
+        <div id="bookingsList" class="bookings-list"></div>
+        <div id="emptyMessage" class="empty-message" style="display:none;">
+            <p>You haven't made any bookings yet. Start exploring vehicles!</p>
+            <a href="index.html" class="btn btn-primary">Browse Vehicles</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 VehiRent. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="js/bookings.js"></script>
+</body>
+</html>
